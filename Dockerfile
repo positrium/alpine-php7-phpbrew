@@ -28,7 +28,7 @@ RUN set -x && \
     echo 'source ~/.phpbrew/bashrc' >> ~/.bashrc && \
     rm /bin/sh && \
     ln -s /bin/bash /bin/sh && \
-    source ~/.bashrc && \
+    /bin/bash -c "source ~/.bashrc" && \
     phpbrew self-update && \
     phpbrew update && \
     phpbrew known --update && \
