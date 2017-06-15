@@ -23,9 +23,10 @@ RUN set -x && \
     chmod +x phpbrew && \
     mv phpbrew /usr/local/bin/phpbrew && \
     bash && \
-    source ~/.phpbrew/bashrc && \
     phpbrew init && \
+    source ~/.phpbrew/bashrc && \
     phpbrew self-update && \
     phpbrew update && \
     phpbrew known --update && \
     phpbrew known --old
+
