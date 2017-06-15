@@ -22,8 +22,8 @@ RUN set -x && \
     chmod +x phpbrew && \
     mv phpbrew /usr/local/bin/phpbrew && \
     phpbrew init && \
-    chmod +x ~/.phpbrew/bashrc && \
-    ~/.phpbrew/bashrc && \
+    apk add bash && \
+    /bin/bash ~/.phpbrew/bashrc && \
     phpbrew self-update && \
     phpbrew update && \
     phpbrew known --update && \
