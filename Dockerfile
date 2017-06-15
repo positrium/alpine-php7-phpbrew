@@ -1,35 +1,6 @@
-FROM alpine:latest
+FROM imasami/alpine-php7-phpbrew:latest
 
-RUN set -x && \
-    apk update && \
-    apk add curl && \
-    apk add php7 && \
-    apk add php7-phar && \
-    apk add php7-json && \
-    apk add php7-ctype && \
-    apk add wget && \
-    apk add gzip && \
-    apk add gcc && \
-    apk add autoconf && \
-    apk add postgresql-dev && \
-    apk add build-base && \
-    apk add libxml2-dev && \
-    apk add bzip2-dev && \
-    apk add libmcrypt-dev && \
-    apk add readline-dev && \
-    apk add libxslt-dev && \
-    curl -L -O https://github.com/phpbrew/phpbrew/raw/master/phpbrew && \
-    chmod +x phpbrew && \
-    mv phpbrew /usr/local/bin/phpbrew && \
-    phpbrew init && \
-    apk add shadow && \
-    apk add bash && \
-    chsh -s /bin/bash && \
-    echo 'source ~/.phpbrew/bashrc' >> ~/.bashrc && \
-    rm /bin/sh && \
-    ln -s /bin/bash /bin/sh && \
-    /bin/bash -c "source ~/.bashrc" && \
-    phpbrew self-update && \
-    phpbrew update && \
-    phpbrew known --update && \
-    phpbrew known --old
+RUN phpbrew switch php-7.1.6 && \
+    phpbrew install php-7.1.6 +default +pdo +mysql +pgsql && \
+    phpbrew switch php-7.1.6 && \
+    php -v
