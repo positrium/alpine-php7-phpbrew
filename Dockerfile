@@ -22,7 +22,10 @@ RUN set -x && \
     chmod +x phpbrew && \
     mv phpbrew /usr/local/bin/phpbrew && \
     phpbrew init && \
+    apk add shadow && \
     apk add bash && \
+    chsh -s /bin/bash && \
+    bash && \
     /bin/bash ~/.phpbrew/bashrc && \
     phpbrew self-update && \
     phpbrew update && \
