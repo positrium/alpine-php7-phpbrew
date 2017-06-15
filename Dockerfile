@@ -26,10 +26,10 @@ RUN set -x && \
     apk add bash && \
     chsh -s /bin/bash && \
     echo 'source ~/.phpbrew/bashrc' >> ~/.bashrc && \
-    /bin/bash ~/.bashrc && \
+    rm /bin/sh && \
+    ln -s /bin/bash /bin/sh && \
+    source ~/.bashrc && \
     phpbrew self-update && \
     phpbrew update && \
     phpbrew known --update && \
-    phpbrew known --old && \
-    bash
-
+    phpbrew known --old
