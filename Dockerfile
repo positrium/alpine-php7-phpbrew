@@ -18,9 +18,12 @@ RUN set -x && \
     apk add libmcrypt-dev && \
     apk add readline-dev && \
     apk add libxslt-dev && \
+    apk add bash && \
     curl -L -O https://github.com/phpbrew/phpbrew/raw/master/phpbrew && \
     chmod +x phpbrew && \
     mv phpbrew /usr/local/bin/phpbrew && \
+    bash && \
+    source ~/.phpbrew/bashrc && \
     phpbrew init && \
     phpbrew self-update && \
     phpbrew update && \
