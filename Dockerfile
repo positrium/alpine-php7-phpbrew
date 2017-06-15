@@ -13,7 +13,7 @@ RUN set -x && \
     apk add autoconf && \
     apk add postgresql-dev && \
     apk add build-base && \
-    apk add lib-xml2-dev && \
+    apk add libxml2-dev && \
     apk add bzip2-dev && \
     apk add libmcrypt-dev && \
     apk add readline-dev && \
