@@ -24,6 +24,5 @@ RUN set -x && \
     phpbrew init && \
     phpbrew self-update && \
     phpbrew update && \
-    phpbrew app get composer && \
     phpbrew known --update && \
     phpbrew known --old
