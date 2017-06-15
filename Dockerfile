@@ -6,6 +6,7 @@ RUN set -x && \
     apk add php7 && \
     apk add php7-phar && \
     apk add php7-json && \
+    apk add php7-ctype && \
     apk add wget && \
     apk add gzip && \
     curl -L -O https://github.com/phpbrew/phpbrew/raw/master/phpbrew && \
@@ -14,4 +15,5 @@ RUN set -x && \
     phpbrew init && \
     phpbrew self-update && \
     phpbrew update && \
-    phpbrew known
+    phpbrew known --update && \
+    phpbrew known --old
