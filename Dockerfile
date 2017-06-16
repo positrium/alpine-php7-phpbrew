@@ -22,14 +22,12 @@ RUN set -x && \
     chmod +x phpbrew && \
     mv phpbrew /usr/local/bin/phpbrew && \
     phpbrew init && \
-    apk add shadow && \
     apk add bash && \
-    chsh -s /bin/bash && \
     echo 'source ~/.phpbrew/bashrc' >> ~/.bashrc && \
-    rm /bin/sh && \
-    ln -s /bin/bash /bin/sh && \
+    rm /bin/sh && ln -s /bin/bash /bin/sh && \
     /bin/bash -c "source ~/.bashrc" && \
     phpbrew self-update && \
     phpbrew update && \
     phpbrew known --update && \
     phpbrew known --old
+
