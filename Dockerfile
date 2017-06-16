@@ -5,3 +5,4 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh && \
     phpbrew switch php-5.4.45 && \
     composer -V && \
     php -v
+
